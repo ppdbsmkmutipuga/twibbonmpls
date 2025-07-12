@@ -201,5 +201,4 @@ function copyText() {
     copyText.select();
     copyText.setSelectionRange(0, 99999); // Untuk mobile
     document.execCommand("copy");
-    alert("📋 Teks telah disalin ke clipboard!");
 }
