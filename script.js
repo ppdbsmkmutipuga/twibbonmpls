@@ -2,6 +2,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const upload = document.getElementById("upload");
 const scaleSlider = document.getElementById("scaleRange");
+let modalTriggered = false;
 
 const TEMPLATE = new Image();
 TEMPLATE.src = "images/twibbon.png";
@@ -182,11 +183,17 @@ function shareImage() {
 }
 
 function openShareModal() {
+    if (!userImage) {
+        alert("⚠️ Silakan upload foto terlebih dahulu.");
+        return;
+    }
+    modalTriggered = true;
     const modal = document.getElementById("shareModal");
     modal.classList.add("show");
 }
 
 function closeShareModal() {
+    modalTriggered = false;
     const modal = document.getElementById("shareModal");
     modal.classList.remove("show");
 }
