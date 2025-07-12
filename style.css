@@ -174,7 +174,19 @@ canvas {
 .social-buttons button:hover {
     background: #ddd;
 }
+.scale-controls {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
 
+.scale-controls input[type="range"] {
+    width: 200px;
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
