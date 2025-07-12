@@ -236,7 +236,14 @@ canvas {
     font-weight: 600;
     cursor: pointer;
 }
-
+.modal-content .close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
 /* Tambahan responsif untuk tablet dan desktop */
 @media (min-width: 481px) and (max-width: 768px) {
     .container {
