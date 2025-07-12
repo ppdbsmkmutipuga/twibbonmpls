@@ -97,6 +97,7 @@ canvas.addEventListener("touchstart", function (e) {
 
 canvas.addEventListener("touchmove", function (e) {
     if (!userImage) return;
+    
     e.preventDefault();
     if (e.touches.length === 1 && isDragging) {
         const touch = e.touches[0];
