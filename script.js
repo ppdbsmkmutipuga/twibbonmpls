@@ -183,17 +183,23 @@ function shareImage() {
 
 
 function openShareModal() {
-    document.getElementById("shareModal").classList.add("show");
+    const modal = document.getElementById("shareModal");
+    if (modal) {
+        modal.classList.add("show");
+    }
 }
 
 function closeShareModal() {
-    document.getElementById("shareModal").classList.remove("show");
+    const modal = document.getElementById("shareModal");
+    if (modal) {
+        modal.classList.remove("show");
+    }
 }
 
 function copyText() {
     const copyText = document.getElementById("copyText");
     copyText.select();
-    copyText.setSelectionRange(0, 99999);
+    copyText.setSelectionRange(0, 99999); // Untuk mobile
     document.execCommand("copy");
-    alert("📋 Teks telah disalin!");
+    alert("📋 Teks telah disalin ke clipboard!");
 }
