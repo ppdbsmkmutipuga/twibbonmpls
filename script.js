@@ -166,19 +166,22 @@ function downloadImage() {
 
 function shareImage() {
     if (!userImage) return alert("⚠️ Silakan upload foto terlebih dahulu.");
+
     canvas.toBlob(blob => {
         const file = new File([blob], "Twibbon_MPLS2025.png", { type: "image/png" });
+
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
             navigator.share({
                 title: "Twibbon MPLS 2025",
-                text: "Aku siap mengikuti MPLS 2025 di SMK MUTIPUGA!",
+                text: document.getElementById("copyText").value,
                 files: [file]
             }).catch(console.error);
         } else {
-             openShareModal();
-            alert("❌ Perangkat tidak mendukung berbagi otomatis.");
+            alert("❌ Perangkat tidak mendukung fitur bagikan otomatis.\nSilakan gunakan tombol WhatsApp, Facebook, dll.");
         }
     });
+}
+
 
     const scaleSlider = document.getElementById("scaleRange");
 
