@@ -182,4 +182,3 @@ function shareImage() {
     });
 
 }
-
