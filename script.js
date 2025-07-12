@@ -131,8 +131,34 @@ function copyText() {
     textarea.select();
     textarea.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(textarea.value);
-    alert("✅ Teks berhasil disalin!");
+    alert("✅ Caption disalin ke clipboard!");
 }
+const campaignUrl = encodeURIComponent("https://ppdbsmkmutipuga.github.io/twibbonmpls/");
+const caption = encodeURIComponent(document.getElementById("copyText").value);
+
+// ✅ Tambahan direct ke sosial media
+function shareToWhatsApp() {
+    window.open(`https://wa.me/?text=${caption}`, "_blank");
+}
+
+function shareToFacebook() {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${campaignUrl}&quote=${caption}`, "_blank");
+}
+
+function shareToLinkedIn() {
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${campaignUrl}`, "_blank");
+}
+
+function shareToInstagram() {
+    alert("📋 Caption sudah disalin. Silakan buka Instagram dan tempel saat membuat post.");
+    window.open("https://www.instagram.com/", "_blank");
+}
+
+function shareToTikTok() {
+    alert("📋 Caption sudah disalin. Silakan buka TikTok dan tempel saat upload.");
+    window.open("https://www.tiktok.com/", "_blank");
+}
+
 window.addEventListener("click", function (e) {
     const modal = document.getElementById("shareModal");
     if (e.target === modal) {
