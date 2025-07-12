@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Twibbon MPLS 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -33,7 +33,7 @@
         <!-- Card Upload -->
         <div class="card">
             <canvas id="canvas" width="768" height="768"></canvas>
-             <!-- Zoom Slider -->
+            <!-- Zoom Slider -->
             <div class="scale-controls">
                 <label for="scaleRange">🔍 Zoom Foto:</label>
                 <input type="range" id="scaleRange" min="0.5" max="3" step="0.01" value="1" />
@@ -44,8 +44,7 @@
 
             <div id="shareSection" class="action-buttons" style="display:none;">
                 <button class="btn btn-download" onclick="downloadImage()">⬇️ Unduh</button>
-                <button class="btn btn-share" onclick="openShareModal()">🔗 Bagikan</button>
-<!--                 <button class="btn btn-share" onclick="shareImage()">🔗 Bagikan</button> -->
+                <button class="btn btn-share" onclick="shareImage()">🔗 Bagikan</button>
             </div>
         </div>
     </main>
@@ -64,15 +63,10 @@ Bersama praktisi industri, aku siap jadi generasi kreatif & berprestasi! 🌟
 #MPLS2025 #SMKMUTIPUGA #DKVplusCoding #SekolahDigitalIslami #BanggaJadiMutipuga
 </textarea>
             <button onclick="copyText()">📋 Salin Teks</button>
-               <!-- ✅ Tambahkan tombol ini untuk share otomatis -->
-        <button onclick="copyText(); shareImage()" class="btn btn-share" style="margin-top: 1rem;">📤 Bagikan Otomatis</button>
-
             <p style="margin-top: 1rem;">📌 Silakan paste di WhatsApp, IG, atau TikTok kamu!</p>
 
             <!-- ✅ Tambahkan bagian ini -->
-
             <div class="social-buttons">
-
                 <p style="margin-top: 1rem;">➡️ Bagikan langsung ke sosial mediamu:</p>
                 <button onclick="copyText(); shareToWhatsApp()">🟢 WhatsApp</button>
                 <button onclick="copyText(); shareToFacebook()">🔵 Facebook</button>
@@ -80,7 +74,6 @@ Bersama praktisi industri, aku siap jadi generasi kreatif & berprestasi! 🌟
                 <button onclick="copyText(); shareToInstagram()">🟣 Instagram</button>
                 <button onclick="copyText(); shareToTikTok()">🖤 TikTok</button>
             </div>
-              <button onclick="copyText(); shareImage()" class="btn btn-share" style="margin-top: 1rem;">📤 Bagikan Otomatis</button>
         </div>
     </div>
     <script src="script.js"></script>
