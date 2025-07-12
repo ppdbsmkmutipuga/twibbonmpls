@@ -182,22 +182,23 @@ function shareImage() {
 }
 
 function openShareModal() {
-  const modal = document.getElementById("shareModal");
-  modal.classList.add("show");
+    const modal = document.getElementById("shareModal");
+    modal.classList.add("show");
 }
 
 function closeShareModal() {
-  const modal = document.getElementById("shareModal");
-  modal.classList.remove("show");
+    const modal = document.getElementById("shareModal");
+    modal.classList.remove("show");
 }
 
-// Tutup modal jika klik area luar konten modal
+// Tutup modal jika klik di luar konten modal
 window.addEventListener("click", function (event) {
     const modal = document.getElementById("shareModal");
     if (event.target === modal) {
         closeShareModal();
     }
 });
+
 
 function copyText() {
     const copyText = document.getElementById("copyText");
