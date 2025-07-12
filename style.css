@@ -138,6 +138,21 @@ canvas {
 }
 
 /* Modal */
+.modal {
+    display: none; /* Default disembunyikan */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Latar belakang transparan hitam */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.modal.show {
+    display: flex;
+}
 .modal-content {
     background: linear-gradient(135deg, #ffffff, #f9f9f9);
     color: #2d2d2d;
