@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twibbon MPLS 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1>🎉 Twibbon MPLS 2025</h1>
+        <p class="subtitle">Upload fotomu, sesuaikan, dan download hasilnya!</p>
+
+        <!-- ✅ Tambahan Tagline -->
+        <p class="tagline">📍 SMK MUTIPUGA – Sekolah Digital Kreatif Terbaik di Kabupaten Demak</p>
+        <p class="subtitle">Upload fotomu, sesuaikan, dan download hasilnya!</p>
+
+        <!-- Petunjuk Awam -->
+        <div class="info-box">
+            <h2>📌 Cara Menggunakan Twibbon</h2>
+            <ol>
+                <li>Klik tombol <strong>"Pilih Foto"</strong> di bawah.</li>
+                <li>Pilih foto dari galeri HP atau laptop kamu.</li>
+                <li>Foto akan otomatis masuk ke bingkai twibbon.</li>
+                <li>Klik <strong>"Unduh"</strong> untuk menyimpan ke galeri kamu.</li>
+                <li>Atau klik <strong>"Bagikan"</strong> untuk share ke sosial media!</li>
+            </ol>
+        </div>
+
+        <!-- Card Upload -->
+        <div class="card">
+            <canvas id="canvas" width="768" height="768"></canvas>
+
+            <label for="upload" class="btn btn-upload">📤 Pilih Foto</label>
+            <input type="file" id="upload" accept="image/*" hidden />
+
+            <div id="shareSection" class="action-buttons" style="display:none;">
+                <button class="btn btn-download" onclick="downloadImage()">⬇️ Unduh</button>
+                <button class="btn btn-share" onclick="shareImage()">🔗 Bagikan</button>
+            </div>
+        </div>
+    </main>
+ <!-- Modal -->
+  <div id="shareModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeShareModal()">×</span>
+      <h2>📝 Copywriting Twibbon</h2>
+      <textarea id="copyText" readonly>
+Aku siap mengikuti MPLS 2025 di SMK MUTIPUGA – Sekolah Digital Kreatif Terbaik di Kabupaten Demak! Ayo jadi bagian dari sekolah keren ini! 🎉
+
+#SMKMUTIPUGA #MPLS2025 #SekolahDigital #BanggaJadiMutipuga
+      </textarea>
+      <button onclick="copyText()">📋 Salin Teks</button>
+      <p style="margin-top: 1rem;">📌 Silakan paste di WhatsApp, IG, atau TikTok kamu!</p>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

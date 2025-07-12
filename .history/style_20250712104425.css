@@ -1,0 +1,64 @@
+:root {
+    --primary: #0066cc;
+    --success: #28a745;
+    --light: #f0f8ff;
+    --shadow: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--light);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 20px var(--shadow);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+input[type="file"] {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    padding: 0.6rem 1rem;
+    margin: 0.3rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-download {
+    background-color: var(--primary);
+}
+
+.btn-share {
+    background-color: var(--success);
+}

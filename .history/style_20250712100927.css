@@ -1,0 +1,51 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e0f0ff;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.frame-wrapper {
+  position: relative;
+  width: 768px;
+  height: 768px;
+}
+
+.frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 768px;
+  height: 768px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#upload {
+  margin-top: 20px;
+  display: block;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

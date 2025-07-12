@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twibbon MPLS 2025</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="twibbon-container">
+        <canvas id="canvas"></canvas>
+
+        <!-- Upload Foto -->
+        <input type="file" id="upload" accept="image/*" capture="environment">
+        <label for="upload" class="upload-label">📷 Pilih Foto dari Galeri</label>
+
+        <!-- Tombol Unduh -->
+        <button onclick="downloadImage()" class="btn-download">⬇️ Unduh Twibbon</button>
+
+        <!-- Bagikan -->
+        <div id="shareSection" class="share-section">
+            <p>Bagikan ke Sosial Media:</p>
+            <button onclick="shareImage()">🔗 Share ke Instagram / WhatsApp</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

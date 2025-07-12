@@ -1,0 +1,111 @@
+:root {
+    --primary: #1976d2;
+    --success: #43a047;
+    --background: #f5f7fa;
+    --card-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --font-color: #333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--background);
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px var(--shadow);
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background: #eee;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 1rem auto;
+    font-size: 0.95rem;
+}
+
+#shareSection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.btn-download {
+    background-color: var(--primary);
+}
+
+.btn-download:hover {
+    background-color: #1565c0;
+}
+
+.btn-share {
+    background-color: var(--success);
+}
+
+.btn-share:hover {
+    background-color: #388e3c;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}

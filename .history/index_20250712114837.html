@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twibbon MPLS 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>📸 Buat Twibbon MPLS 2025</h1>
+    <p class="instruction">1️⃣ Unggah fotomu di bawah, 2️⃣ Atur posisi foto, 3️⃣ Unduh atau bagikan hasilnya!</p>
+
+    <div class="card">
+        <canvas id="canvas" width="768" height="768"></canvas>
+
+        <label for="upload" class="btn btn-upload">📤 Pilih Foto</label>
+        <input type="file" id="upload" accept="image/*" style="display: none;" />
+
+        <div id="shareSection" style="display: none;">
+            <button class="btn btn-download" onclick="downloadImage()">⬇️ Unduh Gambar</button>
+            <button class="btn btn-share" onclick="shareImage()">🔗 Bagikan ke Sosmed</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
