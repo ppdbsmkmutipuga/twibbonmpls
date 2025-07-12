@@ -212,3 +212,28 @@ function copyText() {
     alert("📋 Teks telah disalin!");
 }
 
+function shareToWhatsApp() {
+    const text = document.getElementById("copyText").value;
+    const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+}
+
+function shareToFacebook() {
+    const text = document.getElementById("copyText").value;
+    const url = `https://www.facebook.com/sharer/sharer.php?u=&quote=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+}
+
+function shareToLinkedIn() {
+    const text = document.getElementById("copyText").value;
+    const url = `https://www.linkedin.com/sharing/share-offsite/?url=&summary=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+}
+
+function shareToInstagram() {
+    alert("Instagram tidak mendukung direct share via web.\nSilakan tempel teks secara manual di aplikasi Instagram.");
+}
+
+function shareToTikTok() {
+    alert("TikTok tidak mendukung direct share via web.\nSilakan tempel teks secara manual di aplikasi TikTok.");
+}
