@@ -53,8 +53,7 @@ h1 {
     text-align: center;
 }
 
-
-/* Petunjuk penggunaan */
+/* Info Box */
 .info-box {
     background: white;
     color: #333;
@@ -76,6 +75,7 @@ h1 {
     font-size: 0.95rem;
 }
 
+/* Card */
 .card {
     background: #ffffff;
     border-radius: 1.25rem;
@@ -84,14 +84,18 @@ h1 {
     color: var(--dark);
 }
 
+/* Canvas */
 canvas {
     width: 100%;
     height: auto;
     border-radius: 1rem;
     background: #f0f0f0;
     margin-bottom: 1rem;
+    max-width: 100%;
+    touch-action: none;
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -101,8 +105,8 @@ canvas {
     border: none;
     border-radius: 0.75rem;
     cursor: pointer;
-    margin-top: 1rem;
     transition: transform 0.2s, box-shadow 0.3s ease;
+    margin-top: 1rem;
 }
 
 .btn:hover {
@@ -133,6 +137,7 @@ canvas {
     justify-content: center;
 }
 
+/* Modal */
 .modal {
     transition: all 0.3s ease;
     display: none;
@@ -151,62 +156,6 @@ canvas {
 .modal.show {
     display: flex;
     animation: fadeIn 0.3s ease;
-}
-
-.social-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.social-buttons button {
-    font-size: 1rem;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 0.75rem;
-    cursor: pointer;
-    background: #eee;
-    color: #333;
-    transition: background 0.2s ease;
-}
-
-.social-buttons button:hover {
-    background: #ddd;
-}
-
-canvas {
-    max-width: 100%;
-    height: auto;
-    touch-action: none;
-    /* penting untuk gesture */
-}
-
-.scale-controls {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 14px;
-    flex-wrap: wrap;
-}
-
-.scale-controls input[type="range"] {
-    width: 200px;
-}
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 .modal-content {
@@ -243,10 +192,99 @@ canvas {
     cursor: pointer;
 }
 
+/* Social buttons */
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
 
-@media (max-width: 480px) {
+.social-buttons button {
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    background: #eee;
+    color: #333;
+    transition: background 0.2s ease;
+}
+
+.social-buttons button:hover {
+    background: #ddd;
+}
+
+/* Zoom Controls */
+.scale-controls {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+.scale-controls input[type="range"] {
+    width: 200px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
     .btn {
         width: 100%;
+        font-size: 1rem;
+    }
+
+    .scale-controls input[type="range"] {
+        width: 150px;
+    }
+
+    .info-box {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 0.75rem 1rem;
     }
 
     .action-buttons {
@@ -254,6 +292,14 @@ canvas {
     }
 
     .info-box {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
+
+    .modal-content textarea {
+        font-size: 0.9rem;
     }
 }
