@@ -175,6 +175,7 @@ function shareImage() {
                 files: [file]
             }).catch(console.error);
         } else {
+             openShareModal();
             alert("❌ Perangkat tidak mendukung berbagi otomatis.");
         }
     });
@@ -195,5 +196,19 @@ function shareImage() {
         drawCanvas();
     });
 
+}
+function openShareModal() {
+    document.getElementById("shareModal").classList.add("show");
+}
+
+function closeShareModal() {
+    document.getElementById("shareModal").classList.remove("show");
+}
+function copyText() {
+    const copyText = document.getElementById("copyText");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // Untuk mobile
+    document.execCommand("copy");
+    alert("📋 Teks telah disalin!");
 }
 
