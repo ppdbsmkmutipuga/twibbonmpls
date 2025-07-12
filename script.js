@@ -165,6 +165,7 @@ function downloadImage() {
 
 function shareImage() {
     if (!userImage) return alert("⚠️ Silakan upload foto terlebih dahulu.");
+
     canvas.toBlob(blob => {
         const file = new File([blob], "Twibbon_MPLS2025.png", { type: "image/png" });
 
@@ -179,6 +180,7 @@ function shareImage() {
         }
     });
 }
+
 
 function openShareModal() {
     document.getElementById("shareModal").classList.add("show");
