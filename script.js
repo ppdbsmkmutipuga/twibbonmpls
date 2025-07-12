@@ -107,7 +107,10 @@ canvas.addEventListener("touchmove", function (e) {
     } else if (e.touches.length === 2) {
         const newDistance = getTouchDistance(e.touches);
         const zoomFactor = newDistance / lastTouchDistance;
-        imgScale = initialPinchScale * zoomFactor;
+       // Batasi agar tidak terlalu kecil atau besar
+        const minScale = parseFloat(scaleSlider.min);
+        const maxScale = parseFloat(scaleSlider.max);
+        imgScale = Math.max(minScale, Math.min(maxScale, imgScale));
         scaleSlider.value = imgScale.toFixed(2);
         const newW = userImage.width * imgScale;
         const newH = userImage.height * imgScale;
