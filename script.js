@@ -181,19 +181,14 @@ function shareImage() {
     });
 }
 
-
 function openShareModal() {
-    const modal = document.getElementById("shareModal");
-    if (modal) {
-        modal.classList.add("show");
-    }
+  const modal = document.getElementById("shareModal");
+  modal.classList.add("show");
 }
 
 function closeShareModal() {
-    const modal = document.getElementById("shareModal");
-    if (modal) {
-        modal.classList.remove("show");
-    }
+  const modal = document.getElementById("shareModal");
+  modal.classList.remove("show");
 }
 
 // Tutup modal jika klik area luar konten modal
