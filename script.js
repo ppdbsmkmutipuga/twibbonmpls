@@ -196,6 +196,14 @@ function closeShareModal() {
     }
 }
 
+// Tutup modal jika klik area luar konten modal
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("shareModal");
+    if (event.target === modal) {
+        closeShareModal();
+    }
+});
+
 function copyText() {
     const copyText = document.getElementById("copyText");
     copyText.select();
