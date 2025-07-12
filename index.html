@@ -47,18 +47,16 @@
 
             <div id="shareSection" class="action-buttons" style="display:none;">
                 <button class="btn btn-download" onclick="downloadImage()">⬇️ Unduh</button>
-                <button class="btn btn-share" onclick="openShareModal()">🔗 Bagikan</button>
-            </div>
-        </div>
-    </main>
-    <!-- Modal -->
-   <div id="shareModal" class="modal">
+      <!-- Tombol trigger -->
+<button class="btn btn-share" onclick="openShareModal()">🔗 Bagikan</button>
+
+<!-- Modal -->
+<div id="shareModal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeShareModal()">
-      <i class="fas fa-times"></i>
-    </span>
+    <span class="close" onclick="closeShareModal()">×</span>
+
     <h2>📝 Copywriting Twibbon</h2>
-            <textarea id="copyText" readonly>
+    <textarea id="copyText" readonly>
 Aku siap mengikuti MPLS 2025 di SMK MUTIPUGA! 🚀  
 Satu-satunya sekolah DKV di Demak dengan skill tambahan Coding Web & Mobile!  
 
@@ -67,12 +65,12 @@ Bersama praktisi industri, aku siap jadi generasi kreatif & berprestasi! 🌟
 
 #MPLS2025 #SMKMUTIPUGA #DKVplusCoding #SekolahDigitalIslami #BanggaJadiMutipuga
 </textarea>
-            <button onclick="copyText()">📋 Salin Teks</button>
-            <p style="margin-top: 1rem;">📌 Silakan paste di WhatsApp, IG, atau TikTok kamu!</p>
-            <!-- ✅ Tambahkan tombol ini untuk share otomatis -->
-            <button onclick="shareImage()" class="btn btn-share" style="margin-top: 1rem;">📤 Bagikan </button>
-        </div>
-    </div>
+
+    <button onclick="copyText()">📋 Salin Teks</button>
+    <p style="margin-top: 1rem;">📌 Silakan paste di WhatsApp, IG, atau TikTok kamu!</p>
+    <button onclick="shareImage()" class="btn btn-share" style="margin-top: 1rem;">📤 Bagikan</button>
+  </div>
+</div>
   <script src="script.js" defer></script>
 </body>
 
