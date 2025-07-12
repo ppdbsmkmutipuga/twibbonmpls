@@ -33,6 +33,11 @@
         <!-- Card Upload -->
         <div class="card">
             <canvas id="canvas" width="768" height="768"></canvas>
+             <!-- Zoom Slider -->
+            <div class="scale-controls">
+                <label for="scaleRange">🔍 Zoom Foto:</label>
+                <input type="range" id="scaleRange" min="0.5" max="3" step="0.01" value="1" />
+            </div>
 
             <label for="upload" class="btn btn-upload">📤 Pilih Foto</label>
             <input type="file" id="upload" accept="image/*" hidden />
