@@ -83,14 +83,11 @@ canvas.addEventListener("mouseleave", () => isDragging = false);
 // Mobile gesture
 canvas.addEventListener("touchstart", function (e) {
     if (!userImage) return;
-
-    const rect = canvas.getBoundingClientRect();
-
     if (e.touches.length === 1) {
         isDragging = true;
         const touch = e.touches[0];
-        dragStartX = touch.clientX - rect.left - imgX;
-        dragStartY = touch.clientY - rect.top - imgY;
+        dragStartX = touch.clientX - imgX;
+        dragStartY = touch.clientY - imgY;
     } else if (e.touches.length === 2) {
         isDragging = false;
         lastTouchDistance = getTouchDistance(e.touches);
@@ -101,32 +98,20 @@ canvas.addEventListener("touchstart", function (e) {
 canvas.addEventListener("touchmove", function (e) {
     if (!userImage) return;
     e.preventDefault();
-
-    const rect = canvas.getBoundingClientRect();
-
     if (e.touches.length === 1 && isDragging) {
         const touch = e.touches[0];
-        imgX = touch.clientX - rect.left - dragStartX;
-        imgY = touch.clientY - rect.top - dragStartY;
+        imgX = touch.clientX - dragStartX;
+        imgY = touch.clientY - dragStartY;
         drawCanvas();
     } else if (e.touches.length === 2) {
         const newDistance = getTouchDistance(e.touches);
         const zoomFactor = newDistance / lastTouchDistance;
         imgScale = initialPinchScale * zoomFactor;
-
-        // Batasi skala zoom
-        const minScale = parseFloat(scaleSlider.min);
-        const maxScale = parseFloat(scaleSlider.max);
-        imgScale = Math.max(minScale, Math.min(maxScale, imgScale));
-
         scaleSlider.value = imgScale.toFixed(2);
-
         const newW = userImage.width * imgScale;
         const newH = userImage.height * imgScale;
-
         imgX = circleCenterX - newW / 2;
         imgY = circleCenterY - newH / 2;
-
         drawCanvas();
     }
 }, { passive: false });
@@ -134,6 +119,7 @@ canvas.addEventListener("touchmove", function (e) {
 canvas.addEventListener("touchend", () => {
     isDragging = false;
 });
+
 function getTouchDistance(touches) {
     const dx = touches[0].clientX - touches[1].clientX;
     const dy = touches[0].clientY - touches[1].clientY;
@@ -166,22 +152,18 @@ function downloadImage() {
 
 function shareImage() {
     if (!userImage) return alert("⚠️ Silakan upload foto terlebih dahulu.");
-
     canvas.toBlob(blob => {
         const file = new File([blob], "Twibbon_MPLS2025.png", { type: "image/png" });
-
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
             navigator.share({
                 title: "Twibbon MPLS 2025",
-                text: document.getElementById("copyText").value,
+                text: "Aku siap mengikuti MPLS 2025 di SMK MUTIPUGA!",
                 files: [file]
             }).catch(console.error);
         } else {
-            alert("❌ Perangkat tidak mendukung fitur bagikan otomatis.\nSilakan gunakan tombol WhatsApp, Facebook, dll.");
+            alert("❌ Perangkat tidak mendukung berbagi otomatis.");
         }
     });
-}
-
 
     const scaleSlider = document.getElementById("scaleRange");
 
@@ -200,17 +182,4 @@ function shareImage() {
     });
 
 }
-function openShareModal() {
-    document.getElementById("shareModal").classList.add("show");
-}
 
-function closeShareModal() {
-    document.getElementById("shareModal").classList.remove("show");
-}
-function copyText() {
-    const copyText = document.getElementById("copyText");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // Untuk mobile
-    document.execCommand("copy");
-    alert("📋 Teks telah disalin!");
-}
